@@ -31,5 +31,7 @@ Pod::Spec.new do |s|
     'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64', # 排除 x86_64
     'OTHER_LDFLAGS' => '-ObjC',
     'BITCODE_GENERATION_MODE' => 'NO',
+    'ONLY_ACTIVE_ARCH' => 'NO', # 禁用按需编译
+    'FRAMEWORK_SEARCH_PATHS' => '$(BUILT_PRODUCTS_DIR)',
   }
 end
