@@ -25,8 +25,11 @@ Pod::Spec.new do |s|
   s.frameworks = 'AVFoundation','AudioToolbox','CoreGraphics','CoreMedia','GLKit','UIKit','VideoToolbox'
   s.requires_arc = true
   s.libraries =  'c', 'sqlite3', 'stdc++'
-  s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC',
-  'EXCLUDED_ARCHS[sdk=iphonesimulator*]': 'arm64'
+  # s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC'}
+  s.pod_target_xcconfig = {
+    'ARCHS' => 'arm64', # 明确允许的架构
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', # 不排除任何模拟器架构
+    'OTHER_LDFLAGS' => '-ObjC',
+    'BITCODE_GENERATION_MODE' => 'NO',
   }
-
 end
