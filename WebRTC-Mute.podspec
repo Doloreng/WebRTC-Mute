@@ -25,14 +25,12 @@ Pod::Spec.new do |s|
   s.public_header_files = 'Frameworks/WebRTC.framework/Headers/*.h'
   s.frameworks = 'AVFoundation','AudioToolbox','CoreGraphics','CoreMedia','GLKit','UIKit','VideoToolbox'
   s.requires_arc = true
-  # s.libraries =  'c', 'sqlite3', 'stdc++'
+  s.libraries =  'c', 'sqlite3', 'stdc++'
   # s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC'}
   s.pod_target_xcconfig = {
-    'ARCHS' => 'arm64', # 仅 arm64
-    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64', # 排除 x86_64
+    'VALID_ARCHS' => 'arm64', # 仅 arm64
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64 x86_64', # 排除 x86_64
     'OTHER_LDFLAGS' => '-ObjC',
-    'BITCODE_GENERATION_MODE' => 'NO',
-    'ONLY_ACTIVE_ARCH' => 'NO', # 禁用按需编译
-    'FRAMEWORK_SEARCH_PATHS' => '$(BUILT_PRODUCTS_DIR)',
+    'BITCODE_GENERATION_MODE' => 'NO'
   }
 end
