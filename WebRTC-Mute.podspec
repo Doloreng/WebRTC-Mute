@@ -27,8 +27,8 @@ Pod::Spec.new do |s|
   s.libraries =  'c', 'sqlite3', 'stdc++'
   # s.pod_target_xcconfig = { 'OTHER_LDFLAGS' => '-ObjC'}
   s.pod_target_xcconfig = {
-    'ARCHS' => 'arm64', # 明确允许的架构
-    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64', # 不排除任何模拟器架构
+    'ARCHS' => 'arm64', # 仅 arm64
+    'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'x86_64', # 排除 x86_64
     'OTHER_LDFLAGS' => '-ObjC',
     'BITCODE_GENERATION_MODE' => 'NO',
   }
