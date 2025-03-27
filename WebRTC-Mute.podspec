@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = 'WebRTC-Mute'
-  s.version      = '1.0.0'
+  s.version      = '1.0.1'
   s.summary      = 'a WebRTC can mute micphone,use audio-playbackmode for play'
   s.description  = <<-DESC
   play back mode
@@ -19,8 +19,8 @@ Pod::Spec.new do |s|
   s.author             = { 'kunpenghong' => '576012206@qq.com' }
   s.source       = { :git => 'https://github.com/Doloreng/WebRTC-Mute.git', :tag => s.version }
   
-  s.ios.deployment_target = '12.0'
-  s.platform     = :ios, '12.0'
+  s.ios.deployment_target = '12.1'
+  s.platform     = :ios, '12.1'
   s.vendored_frameworks = 'Frameworks/WebRTC.framework'
   s.source_files = 'Frameworks/WebRTC.framework/Headers/*.h'
   s.public_header_files = 'Frameworks/WebRTC.framework/Headers/*.h'
