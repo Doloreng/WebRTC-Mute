@@ -34,4 +34,5 @@ Pod::Spec.new do |s|
     'OTHER_LDFLAGS' => '-ObjC',
     'BITCODE_GENERATION_MODE' => 'NO'
   }
+  s.user_target_xcconfig = { 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64' }
 end
